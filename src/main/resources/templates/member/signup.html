@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="content" class="container my-3">
+    <div class="my-3 border-bottom">
+        <div>
+            <h4>회원가입</h4>
+        </div>
+    </div>
+    <form th:action="@{/member/signup}" th:object="${memberCreateForm}" method="post">
+
+        <div class="mb-3">
+            <label for="mid" class="form-label">사용자ID</label>
+            <input type="text" id="mid" th:field="*{mid}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="mpw1" class="form-label">비밀번호</label>
+            <input type="password" id="mpw1" th:field="*{mpw1}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="mpw2" class="form-label">비밀번호 확인</label>
+            <input type="password" id="mpw2" th:field="*{mpw2}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">이메일</label>
+            <input type="email" id="email" th:field="*{email}" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">회원가입</button>
+    </form>
+</div>
+</html>
+

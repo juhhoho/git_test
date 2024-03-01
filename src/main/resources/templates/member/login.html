@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="content" class="container my-3">
+    <div class="my-3 border-bottom">
+        <div>
+            <h4>로그인</h4>
+        </div>
+    </div>
+    <form th:action="@{/member/login}" th:object="${memberLoginForm}" method="post">
+
+        <div class="mb-3">
+            <label for="mid" class="form-label">사용자ID</label>
+            <input type="text" id="mid" th:field="*{mid}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="mpw" class="form-label">비밀번호</label>
+            <input type="password" id="mpw" th:field="*{mpw}" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary">로그인</button>
+    </form>
+</div>
+</html>
